@@ -31,11 +31,11 @@
 
    
 
-   ![prototype2](/images/prototype2.PNG)
+   ![prototype2](images/prototype2.PNG)
 
    
 
-![prototype](/images/prototype3.PNG)
+![prototype](images/prototype3.PNG)
 
 
 
