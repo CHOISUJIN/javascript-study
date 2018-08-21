@@ -2,7 +2,7 @@
 
 : 모든 함수는 객체로서 prototype 프로퍼티를 가지고 있다.  함수를 생성할 때 함수 자신과 연결된 객체를 동시에 생성하는데 이 생성된 객체가 prototype 객체다. 생성된 prototype 객체는 constructor 프로퍼티를 가지고 있고 함수의 prototype 프로퍼티와 생성된 객체(prototype 객체)의 constructor 프로퍼티는 서로 참조하게 된다.
 
-![prototype](/images/prototype1.PNG)
+![prototype](images/prototype1.PNG)
 
 
 
