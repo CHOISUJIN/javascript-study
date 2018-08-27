@@ -2,10 +2,6 @@
 
 
 
-### 객체의 특징
-
-
-
 ### 객체의 생성방법
 
 1. 객체 리터럴({})
@@ -16,8 +12,9 @@
    // 객체 리터럴 방식으로 객체 생성
    var woonbi = {
        name : 'woonbi',
-       age : 13
+       age  : 13
    }
+   
    ~~~
 
    
@@ -34,7 +31,51 @@
    
    ~~~
 
+3. 생성자 함수를 이용한 객체 생성
 
+   ``` javascript
+   // 생성자 함수
+   function Person(name) { 
+   	this.name = name;
+   }
+   
+   var sujin = new Person('sujin'); 
+   ```
+
+   
+
+### 객체 프로퍼티 접근방법
+
+1.  대괄호 표기법이나 마침표 표기법으로 접근 할 수 있음.
+
+   ``` javascript
+   // 객체 리터럴 방식으로 객체 생성
+   var woonbi = {
+       name : 'woonbi'
+   }
+   
+   // 객체 프로퍼티 동적으로 생성
+   woonbi.age = 13;
+   console.log(woonbi.age);		// 13
+   
+   // 객체 프로퍼티 읽기
+   console.log(woonbi.name); 		// woonbi
+   console.log(woonbi['name']);	// woonbi
+   
+   // 객체 프로퍼티 값 변경
+   woonbi.age = 15; 
+   console.log(woonbi.age);		// 15
+   
+   // 객체 프로퍼티 삭제
+   console.log(woonbi.age);		// 15
+   delete woonbi.name;				
+   console.log(woonbi.age);		// undefined
+   
+   ```
+
+   ** 자바스크립트는 프로퍼티에 값을 할당할 때 프로퍼티가 있으면 값 변경, 없으면 프로퍼티 추가 후 값을 할당함!! 위의 프로퍼티 동적생성과 값 변경 예를 보면 알 수 있음 
+
+   
 
 
 
