@@ -135,7 +135,41 @@
 
 4. 생성자 함수 호출 시 this 바인딩
 
-   : 자바스크립트에서는 기존 함수에 new 연산자를 붙여 호출하면 그 함수는 생성자 함수로 동작한다. 생성자 함수로  정의된 함수는 함수명의 첫 글자를 대문자로 쓴다.
+   : 자바스크립트에서는 기존 함수에 new 연산자를 붙여 호출하면 그 함수는 생성자 함수로 동작한다. 
+
+   ```  javascript
+   // 생성자 함수 정의
+   var Person = function(name, age) {
+       this.name = name;
+       this.age = age;       
+   }
+   
+   // woonbi 객체 생성
+   var woonbi = new Person('woonbi', 13);
+   
+   ```
+
+   생성자 함수로  호출되면 함수의 코드가 실행되기전에 빈객체를 생성하고 그 생성한 객체에 this 바인딩이 된다.  그리고 그 this로 바인딩된 객체가 리턴된다. 
 
    
 
+5. apply와 call메서드를 이용한 명시적 this 바인딩
+
+   : function.apply(thisArg, array) 와 같이 사용한다. 
+
+   thisArg는 this바인딩이 되는 객체이고 array는 함수를 호출할 때 넘겨주는 인자값이다. 
+
+   ``` javascript
+   function Person(name, age){
+       this.name = name;
+       this.age = age;
+   }
+   
+   var foo = {};
+   
+   Person.apply(foo, ['woonbi', 13]);
+   ```
+
+   
+
+   
