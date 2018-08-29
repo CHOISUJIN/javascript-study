@@ -2,6 +2,10 @@
 
 
 
+### 객체의 특징
+
+
+
 ### 객체의 생성방법
 
 1. 객체 리터럴({})
@@ -12,9 +16,8 @@
    // 객체 리터럴 방식으로 객체 생성
    var woonbi = {
        name : 'woonbi',
-       age  : 13
+       age : 13
    }
-   
    ~~~
 
    
@@ -31,51 +34,7 @@
    
    ~~~
 
-3. 생성자 함수를 이용한 객체 생성
 
-   ``` javascript
-   // 생성자 함수
-   function Person(name) { 
-   	this.name = name;
-   }
-   
-   var sujin = new Person('sujin'); 
-   ```
-
-   
-
-### 객체 프로퍼티 접근방법
-
-1.  대괄호 표기법이나 마침표 표기법으로 접근 할 수 있음.
-
-   ``` javascript
-   // 객체 리터럴 방식으로 객체 생성
-   var woonbi = {
-       name : 'woonbi'
-   }
-   
-   // 객체 프로퍼티 동적으로 생성
-   woonbi.age = 13;
-   console.log(woonbi.age);		// 13
-   
-   // 객체 프로퍼티 읽기
-   console.log(woonbi.name); 		// woonbi
-   console.log(woonbi['name']);	// woonbi
-   
-   // 객체 프로퍼티 값 변경
-   woonbi.age = 15; 
-   console.log(woonbi.age);		// 15
-   
-   // 객체 프로퍼티 삭제
-   console.log(woonbi.age);		// 15
-   delete woonbi.name;				
-   console.log(woonbi.age);		// undefined
-   
-   ```
-
-   ** 자바스크립트는 프로퍼티에 값을 할당할 때 프로퍼티가 있으면 값 변경, 없으면 프로퍼티 추가 후 값을 할당함!! 위의 프로퍼티 동적생성과 값 변경 예를 보면 알 수 있음 
-
-   
 
 
 
@@ -156,6 +115,45 @@ console.log(Arr);  // [empty, true, empty × 3, "가나다", empty × 71, 123, e
 console.log(Arr.length); // 101 (배열의 length는 가장 큰 인덱스+1 )
 
 ```
+
+
+
+### 유사 배열 객체란? 
+
+자바스크립트의 모든 배열은 lenght 프로퍼티가 존재한다.  length 프로퍼티는 배열내의 가장 큰 인덱스에 1을 더한값이다.  그런데 여기서 객체에 length 프로퍼티가 있으면 어떻게 될까? 자바스크립트에선 객체인데 length 프로퍼티를 가진 객체를 **유사 배열 객체**라고 한다.  
+그렇다면 유사 배열 객체는 배열의 표준 메서드인 push()를 사용할 수 있을까?  아래 코드로 확인해보자! 
+
+``` javascript 
+var arr = ['abc']; 
+var obj = {
+    name: 'woonbi',
+    length: 1
+}
+
+arr.push('def');
+console.log(arr);     // ['abc', 'def']
+
+obj.push('darong');   // Uncaught TypeError: obj.push is not a function
+```
+
+ arr 배열의 경우 push() 메소드를 사용해 'def' 원소를 추가했지만, 유사 배열 객체인 obj는 오류가 발생했다.  그럼 어떻게 해야 유사 배열 객체는 배열의 메소드를 사용할 수 있을까?? 
+바로바로바로! **apply() 메서드**를 이용하면 된다! 
+
+``` javascript
+var obj = {
+    name: 'woonbi',
+    length: 1
+}
+
+Array.prototype.push.apply(obj, ['darong']);
+console.log(obj);   // {1: "darong", name: "woonbi", length: 2}
+```
+
+왜 apply() 메서드를 사용하면 배열의 표준 메서드를 사용할 수 있는 걸까..? 이 부분은 [this 바인딩을](/function/thisbinding.md) 참고! 우선은 유사 배열 객체도 배열의 메서드를 사용할 수 있다고만 생각하도록 하자!  
+
+
+
+
 
 
 
