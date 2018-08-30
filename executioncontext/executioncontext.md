@@ -29,7 +29,7 @@ func1(2,3);
 
 2.  함수 내부의 정보를 담는 객체가 생성된다. 이를 활성객체 또는 변수객체라고 부른다.
 
-   ![context1](images/context2.png)
+    ![context1](images/context2.png)
 
 
 
