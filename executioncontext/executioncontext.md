@@ -118,6 +118,8 @@ function outerFunc() {
     var innerFunc = function() {
         console.log(a);
     }
+    
+    return innerFunc;
 }
 
 var inner = outerFunc();
