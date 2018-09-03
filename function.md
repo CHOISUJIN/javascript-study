@@ -1,4 +1,4 @@
-# 함수
+# 자바스크립트 함수
 
 
 
@@ -6,7 +6,7 @@
 
 1. 변수 또는 프로퍼티 값으로 할당할 수 있음.
 
-   ``` javascript
+   ```javascript
    // 변수에 함수를 할당
    var foo = 100; 
    var abc = function () {
@@ -28,7 +28,7 @@
 
 2. 함수를 인자로 전달할 수 있음.
 
-   ``` javascript
+   ```javascript
    // 함수 표현식으로 함수를 생성
    var abc = function(func) {
        func(); // 인자로 넘어온 함수를 호출함.
@@ -76,7 +76,7 @@
    : 함수를 호출할 때 전달되는 인자 값으로 함수가 호출된 상태가 아니면 null !
    자바스크립트는 함수를 호출할 때 함수의 형식에 맞춰 인자를 넘기지 않아도 오류가 발생하지 않는데 호출된 인자의 개수를 확인하고 동작을 다르게 해야할 경우가 있다. 이럴때에 arguments객체를 활용하면 된다.
 
-   ``` javascript
+   ```javascript
    // 인자가 2개인 func함수 정의 
    // 보통의 프로그램에선 인자의 값을 맞춰서 넘기지 않으면 오류가 발생하지만
    // 자바스크립트에선 아무 문제없음!! 
@@ -105,8 +105,6 @@
 
    
 
-   
-
 5. [[Prototype]] 링크
 
    : 자신의 부모역할을 하는 프로토타입 객체를 가리킴
@@ -121,7 +119,7 @@
 
 7. call과 apply 
 
-   :  [this 바인딩](thisbinding.md)에서 설명
+   :  [this 바인딩](this.md)에서 설명
 
     
 
@@ -131,7 +129,7 @@
 
 1. 함수 선언문으로 함수 생성
 
-   ``` javascript
+   ```javascript
    [코드]
    add(5,3);
    
@@ -143,7 +141,7 @@
    add(3,4);
    ```
 
-   ``` javascript
+   ```javascript
    [실행결과]
    8
    7
@@ -151,7 +149,7 @@
 
 2. 함수 표현식으로 함수 생성
 
-   ``` javascript
+   ```javascript
    [코드]
    add(1,2);
    
@@ -163,7 +161,7 @@
    add(3,4); 
    ```
 
-   ``` javascript
+   ```javascript
    [실행결과]
    Uncaught TypeError: add is not a function
    7
@@ -179,7 +177,7 @@
 
 ### 함수 스코프(scope)와 스코프 체이닝
 
-``` javascript
+```javascript
 function parent() {
     var a = 10; 
     var b = 20; 
@@ -200,7 +198,7 @@ child();
 
 위의 코드를 실행하면 어떤 결과가 나올까?  child() 함수에 a라는 변수가 선언되어있지 않기 때문에 오류가 발생한다고 생각할 수도 있다. 하지만 실행결과는 아래와 같다.
 
-``` java
+```java
 [실행결과]
 
 10
@@ -213,36 +211,36 @@ child() 함수에는 a라는 변수가 선언되어있지 않은데 child() 함�
 
 이 처럼 **내부함수(child)는 자신을 둘러싼 외부함수(parent) 변수에 접근이 가능하다.** 이것이 가능한 이유는 바로 자바스크립트의 **스코프 체이닝** 때문이다.  
 
-스코프체이닝에 대해선 [스코프체이닝](/executioncontext/executioncontext.md)을 참고! 
+스코프체이닝에 대해선 [스코프체이닝](scope-chain.md)을 참고! 
 
 
 
 ### 함수리턴
 
-1.  일반 함수, 메서드는 리턴값을 지정하지 않으면 undefined값이 리턴된다
+1. 일반 함수, 메서드는 리턴값을 지정하지 않으면 undefined값이 리턴된다
 
-   ``` javascript
+```javascript
    [코드]
    var func = function() {
        console.log('리턴값이 없는 함수');
    }
    
    console.log(func());
-   ```
+```
 
-   ``` javascript
+```javascript
    [실행결과]
    리턴값이 없는 함수
    undefined
-   ```
+```
 
    
 
-2. 생성자 함수에서 리턴값을 지정하지 않으면 생성된 객체가 리턴된다. 
+1. 생성자 함수에서 리턴값을 지정하지 않으면 생성된 객체가 리턴된다. 
 
    만약 이 생성자 함수에 다른 객체를 리턴한다면 어떻게 될지 아래 코드에서 확인해보자.
 
-   ``` javascript
+   ```javascript
    [코드1] 다른객체를 리턴
    
    function Person(name,age){
@@ -270,7 +268,7 @@ child() 함수에는 a라는 변수가 선언되어있지 않은데 child() 함�
    console.log(rowoon);
    ```
 
-   ``` javascript
+   ```javascript
    [코드1 실행결과]
    {name: "sujin", age: 26}
    
@@ -279,18 +277,4 @@ child() 함수에는 a라는 변수가 선언되어있지 않은데 child() 함�
    ```
 
    위 코드에서 알 수 있듯이 생성자 함수의 리턴값을  다른 객체로 지정하면 지정된 객체가 리턴되고 숫자나 불린 문자열등을 리턴할 경우에는 이러한 리턴값을 무시하고 this로 바인딩된 객체가 리턴된다.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

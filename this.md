@@ -1,12 +1,10 @@
-# this 바인딩
-
-
+# 자바스크립트 this 
 
 1. 객체의 메서드 호출 시 this 바인딩
 
    :  객체의 메서드는 객체의 프로퍼티가 함수인 것을 말하고 이 메서드를 호출할 때 this는 해당 메서드를 호출한 객체로 바인딩 된다. 
 
-   ``` javascript
+   ```javascript
    // woonbi 객체 생성
    var woonbi = {
        name : 'woonbi',
@@ -34,7 +32,7 @@
 
    : 함수를 호출할 때 내부 코드에서 사용된 this는 전역 객체(window)에 바인딩된다. 
 
-     ``` javascript
+   ```javascript
    var test = 'test';
    
    // 전역변수는 window 객체의 프로퍼티로 접근 가능
@@ -45,7 +43,7 @@
    }
    
    sayFoo();  // test
-     ```
+   ```
 
    
 
@@ -53,7 +51,7 @@
 
    : 내부 함수에서 this를 이용할 때에도 위의 함수 호출 시 this 바인딩과 똑같이 적용된다.
 
-   ``` javascript
+   ```javascript
    [코드]
    var value = 200;
    
@@ -82,7 +80,7 @@
    obj.func1();
    ```
 
-   ``` javascript
+   ```javascript
    [실행결과]
    func1() this.value : 21
    func2() this.value : 201
@@ -93,7 +91,7 @@
 
    그렇다면 부모 함수의 this가 가리키는 객체에 접근하려면 어떻게 해야할까?  부모함수의 this를 다른 변수에 저장하는 방법을 이용하면된다! 보통 이런 변수의 이름을 that이라고 사용한다. 
 
-   ``` javascript
+   ```javascript
    [코드]
    var value = 200;
    
@@ -124,7 +122,7 @@
    obj.func1();
    ```
 
-   ``` javascript
+   ```javascript
    [실행결과]
    func1() this.value : 21
    func2() this.value : 22
@@ -137,7 +135,7 @@
 
    : 자바스크립트에서는 기존 함수에 new 연산자를 붙여 호출하면 그 함수는 생성자 함수로 동작한다. 
 
-   ```  javascript
+   ```javascript
    // 생성자 함수 정의
    var Person = function(name, age) {
        this.name = name;
@@ -159,7 +157,7 @@
 
    thisArg는 this바인딩이 되는 객체이고 array는 함수를 호출할 때 넘겨주는 인자값이다. 
 
-   ``` javascript
+   ```javascript
    function Person(name, age){
        this.name = name;
        this.age = age;

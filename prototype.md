@@ -1,8 +1,8 @@
 # prototype
 
-: 모든 함수는 객체로서 prototype 프로퍼티를 가지고 있다.  함수를 생성할 때 함수 자신과 연결된 객체를 동시에 생성하는데 이 생성된 객체가 prototype 객체다. 생성된 prototype 객체는 constructor 프로퍼티를 가지고 있고 함수의 prototype 프로퍼티와 생성된 객체(prototype 객체)의 constructor 프로퍼티는 서로 참조하게 된다.
+모든 함수는 객체로서 prototype 프로퍼티를 가지고 있다.  함수를 생성할 때 함수 자신과 연결된 객체를 동시에 생성하는데 이 생성된 객체가 prototype 객체다. 생성된 prototype 객체는 constructor 프로퍼티를 가지고 있고 함수의 prototype 프로퍼티와 생성된 객체(prototype 객체)의 constructor 프로퍼티는 서로 참조하게 된다.
 
-![prototype](images/prototype1.PNG)
+![prototype](images/prototype/prototype1.PNG)
 
 
 
@@ -16,7 +16,7 @@
 
     
 
-   ~~~ javascript
+   ```javascript
    // Dog 생성자 함수
    function Dog (name) {
        this.name = name;
@@ -27,23 +27,13 @@
    
    console.dir(Dog);
    console.dir(darong);
-   ~~~
+   ```
 
    
 
-   ![prototype2](images/prototype2.PNG)
+   ![prototype2](images/prototype/prototype2.PNG)
 
    
 
-![prototype](images/prototype3.PNG)
-
-
-
-
-
-
-
-
-
-
+![prototype](images/prototype/prototype3.PNG)
 
